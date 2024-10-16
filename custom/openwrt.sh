@@ -1,9 +1,9 @@
 #!/bin/sh
 
 #====================================================
-#	MANUFACTURER:	281677160
+#	MANUFACTURER:	Namia-M
 #	Dscription: openwrt onekey Management
-#	github: https://github.com/281677160/build-actions
+#	github: https://github.com/Namia-M/OpenWrt-X
 #====================================================
 
 # 字体颜色配置
