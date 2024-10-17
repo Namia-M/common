@@ -42,4 +42,3 @@ if ! [ -e "$1" ]; then
 fi
 printf '%-62s %-62s\n' "Installed in Staging" "From Packages Files"
 diff -d -y <(list_staging_files "$STAGING_DIR") <(list_ipkg_files "$@")
-
