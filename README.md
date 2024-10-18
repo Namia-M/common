@@ -1,1 +1,1 @@
-# - OpenWrt-X专用common后端配置
+# -common 后端配置
