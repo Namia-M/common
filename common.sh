@@ -117,7 +117,7 @@ case "${SOURCE_CODE}" in
 COOLSNOWWOLF)
   export REPO_URL="https://github.com/coolsnowwolf/lede"
   export SOURCE="Lede"
-  export SOURCE_OWNER="Lean's"
+  export SOURCE_OWNER="Namia-X's"
   export LUCI_EDITION="18.06"
   export DIY_WORK="${FOLDER_NAME}master"
 ;;
@@ -132,13 +132,13 @@ IMMORTALWRT)
   if [[ "${REPO_BRANCH}" == "mt798x" ]]; then
     export REPO_URL="https://github.com/hanwckf/immortalwrt-mt798x"
     export SOURCE="Immortalwrt"
-    export SOURCE_OWNER="hanwckf's"
+    export SOURCE_OWNER="Namia-X's"
     export LUCI_EDITION="mt798x"
     export DIY_WORK="hanwckf2102"
     export REPO_BRANCH="openwrt-21.02"
   else
     export REPO_URL="https://github.com/immortalwrt/immortalwrt"
-    export SOURCE="Immortalwrt"
+    export SOURCE="Namia-X"
     export SOURCE_OWNER="ctcgfw's"
     export LUCI_EDITION="$(echo "${REPO_BRANCH}" |sed 's/openwrt-//g')"
     export DIY_WORK="${FOLDER_NAME}$(echo "${LUCI_EDITION}" |sed "s/\.//g" |sed "s/\-//g")"
@@ -147,7 +147,7 @@ IMMORTALWRT)
 XWRT)
   export REPO_URL="https://github.com/x-wrt/x-wrt"
   export SOURCE="Xwrt"
-  export SOURCE_OWNER="ptpt52's"
+  export SOURCE_OWNER="Namia-X's"
   export LUCI_EDITION="${REPO_BRANCH}"
   export DIY_WORK="${FOLDER_NAME}$(echo "${LUCI_EDITION}" |sed "s/\.//g" |sed "s/\-//g")"
 ;;
