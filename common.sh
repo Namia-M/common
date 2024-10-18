@@ -124,7 +124,7 @@ COOLSNOWWOLF)
 LIENOL)
   export REPO_URL="https://github.com/Lienol/openwrt"
   export SOURCE="Lienol"
-  export SOURCE_OWNER="Lienol's"
+  export SOURCE_OWNER="Namia-X's"
   export LUCI_EDITION="$(echo "${REPO_BRANCH}" |sed 's/openwrt-//g')"
   export DIY_WORK="${FOLDER_NAME}$(echo "${LUCI_EDITION}" |sed "s/\.//g" |sed "s/\-//g")"
 ;;
