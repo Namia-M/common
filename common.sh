@@ -138,8 +138,8 @@ IMMORTALWRT)
     export REPO_BRANCH="openwrt-21.02"
   else
     export REPO_URL="https://github.com/immortalwrt/immortalwrt"
-    export SOURCE="Namia-X"
-    export SOURCE_OWNER="ctcgfw's"
+    export SOURCE="Immortalwrt"
+    export SOURCE_OWNER="Namia-X's"
     export LUCI_EDITION="$(echo "${REPO_BRANCH}" |sed 's/openwrt-//g')"
     export DIY_WORK="${FOLDER_NAME}$(echo "${LUCI_EDITION}" |sed "s/\.//g" |sed "s/\-//g")"
   fi
@@ -154,7 +154,7 @@ XWRT)
 OFFICIAL)
   export REPO_URL="https://github.com/openwrt/openwrt"
   export SOURCE="Official"
-  export SOURCE_OWNER="openwrt's"
+  export SOURCE_OWNER="Namia-X's"
   export LUCI_EDITION="$(echo "${REPO_BRANCH}" |sed 's/openwrt-//g')"
   export DIY_WORK="${FOLDER_NAME}$(echo "${LUCI_EDITION}" |sed "s/\.//g" |sed "s/\-//g")"
 ;;
