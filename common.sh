@@ -492,33 +492,24 @@ done
 rm -rf ${HOME_PATH}/feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x ${HOME_PATH}/feeds/packages/lang/golang
 
-
-if [[ `grep -Eoc "admin:.*" ${FILES_PATH}/etc/shadow` -eq '1' ]]; then
-  sed -i 's/admin:.*/admin::0:0:99999:7:::/g' ${FILES_PATH}/etc/shadow
+if [[ -d "${HOME_PATH}/feeds/danshui1/relevance/shadowsocks-libev" ]]; then
+  rm -rf ${HOME_PATH}/feeds/packages/net/shadowsocks-libev
+  mv -f feeds/danshui1/relevance/shadowsocks-libev ${HOME_PATH}/feeds/packages/net/shadowsocks-libev
+fi
+if [[ -d "${HOME_PATH}/feeds/danshui1/relevance/kcptun" ]]; then
+  rm -rf ${HOME_PATH}/feeds/packages/net/kcptun
+  mv -f ${HOME_PATH}/feeds/danshui1/relevance/kcptun ${HOME_PATH}/feeds/packages/net/kcptun
 fi
 
-cp -Rf ${HOME_PATH}/build/common/custom/Postapplication "${FILES_PATH}/etc/init.d/Postapplication"
-sudo chmod +x "${FILES_PATH}/etc/init.d/Postapplication"
-
-cp -Rf ${HOME_PATH}/build/common/custom/networkdetection "${FILES_PATH}/etc/networkdetection"
-sudo chmod +x "${FILES_PATH}/etc/networkdetection"
-
-[[ ! -d "${FILES_PATH}/usr/bin" ]] && mkdir -p ${FILES_PATH}/usr/bin
-cp -Rf ${HOME_PATH}/build/common/custom/openwrt.sh "${FILES_PATH}/usr/bin/openwrt"
-sudo chmod +x "${FILES_PATH}/usr/bin/openwrt"
-
-echo '#!/bin/bash' > "${DELETE}"
-sudo chmod +x "${DELETE}"
-
-if [[ -d "${HOME_PATH}/target/linux/armsr" ]]; then
-  features_file="${HOME_PATH}/target/linux/armsr/Makefile"
-elif [[ -d "${HOME_PATH}/target/linux/armvirt" ]]; then
-  features_file="${HOME_PATH}/target/linux/armvirt/Makefile"
+if [[ ! -d "${HOME_PATH}/feeds/packages/lang/rust" ]]; then
+  cp -Rf ${HOME_PATH}/build/common/Share/rust ${HOME_PATH}/feeds/packages/lang/rust
 fi
-[[ -n "${features_file}" ]] && sed -i "s?FEATURES+=.*?FEATURES+=targz?g" "${features_file}"
-sed -i '/DISTRIB_SOURCECODE/d' "${REPAIR_PATH}"
-echo -e "\nDISTRIB_SOURCECODE='${SOURCE}_${LUCI_EDITION}'" >> "${REPAIR_PATH}" && sed -i '/^\s*$/d' "${REPAIR_PATH}"
 
+[[ ! -d "${HOME_PATH}/feeds/packages/devel/packr" ]] && cp -Rf ${HOME_PATH}/build/common/Share/packr ${HOME_PATH}/feeds/packages/devel/packr
+./scripts/feeds update danshui2
+
+cp -Rf ${HOME_PATH}/feeds.conf.default ${HOME_PATH}/LICENSES/doc/uniq.conf
+}
 
 function Diy_Wenjian() {
 cp -Rf ${HOME_PATH}/LICENSES/doc/uniq.conf ${HOME_PATH}/feeds.conf.default
