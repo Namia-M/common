@@ -325,9 +325,8 @@ src-git small https://github.com/kenzok8/small;master
 src-git helloworld https://github.com/fw876/helloworld.git
 src-git passwall3 https://github.com/xiaorouji/openwrt-passwall-packages;main
 src-git small2 https://github.com/kenzok8/small-package;main
-EOF
 
-rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
+EOF
 
 ./scripts/feeds update -a
 
