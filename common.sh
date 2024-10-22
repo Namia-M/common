@@ -321,7 +321,7 @@ mv -f uniq.conf feeds.conf.default
 cat >>"feeds.conf.default" <<-EOF
 src-git danshui1 https://github.com/Namia-M/openwrt-package.git;${SOURCE}
 src-git namia https://github.com/Namia-M/package;main
-src-git small https://github.com/kenzok8/small;main
+src-git small https://github.com/kenzok8/small;master
 src-git helloworld https://github.com/fw876/helloworld.git
 src-git passwall3 https://github.com/xiaorouji/openwrt-passwall-packages;main
 src-git small2 https://github.com/kenzok8/small-package;main
